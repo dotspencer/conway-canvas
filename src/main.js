@@ -19,4 +19,8 @@ state[1][1] = 1;
 state[rowsColumns - 1][rowsColumns - 1] = 1;
 
 draw.draw(state, ctx);
-console.log(logic.next(state));
+
+setTimeout(function(){
+  state = logic.next(state);
+  draw.draw(state, ctx);
+}, 1000);

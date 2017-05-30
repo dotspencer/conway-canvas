@@ -14,10 +14,13 @@ function draw(state, ctx){
     for(var column = 0; column < state[row].length; column++){
       var x = boxWidth * column;
 
-      // Only draw if value is 1
-      if(state[row][column] == 1){
-        ctx.fillStyle = '#eaeaea';
-        ctx.fillRect(x, y, boxWidth, boxWidth);
+      switch(state[row][column]){
+        case 1:
+          ctx.fillStyle = '#eaeaea';
+          ctx.fillRect(x, y, boxWidth, boxWidth);
+          break;
+        default:
+          ctx.clearRect(x, y, boxWidth, boxWidth);
       }
     }
   }

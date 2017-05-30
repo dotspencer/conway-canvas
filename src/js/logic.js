@@ -3,7 +3,22 @@ module.exports = {
 };
 
 function next(state){
+  var rowsColumns = state.length;
   var neighbors = countNeighbors(state);
+  var nextState = neighbors;
+
+  for(var row = 0; row < rowsColumns; row++){
+    for(var column = 0; column < rowsColumns; column++){
+      switch(neighbors[row][column]){
+        case 2:
+          nextState[row][column] = 1;
+          break;
+        default:
+          nextState[row][column] = 0;
+      }
+    }
+  }
+  return nextState;
 }
 
 function countNeighbors(state){
