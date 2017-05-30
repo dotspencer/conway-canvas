@@ -15,12 +15,14 @@ for(var row = 0; row < rowsColumns; row++){
   }
 }
 state[0][0] = 1;
+state[0][1] = 1;
 state[1][1] = 1;
+state[0][2] = 1;
 state[rowsColumns - 1][rowsColumns - 1] = 1;
 
 draw.draw(state, ctx);
 
-setTimeout(function(){
+setInterval(function(){
   state = logic.next(state);
   draw.draw(state, ctx);
-}, 1000);
+}, 500);
