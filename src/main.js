@@ -1,5 +1,6 @@
 var styles = require('./scss/common.scss');
 var draw = require('./js/draw');
+var logic = require('./js/logic');
 
 var rowsColumns = 10;
 var canvas = document.getElementById('canvas');
@@ -18,3 +19,4 @@ state[1][1] = 1;
 state[rowsColumns - 1][rowsColumns - 1] = 1;
 
 draw.draw(state, ctx);
+console.log(logic.next(state));

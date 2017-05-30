@@ -1,8 +1,12 @@
-module.export = {
-
-}
+module.exports = {
+  next: next
+};
 
 function next(state){
+  var neighbors = countNeighbors(state);
+}
+
+function countNeighbors(state){
   var neighbors = [];
   var rowsColumns = state.length;
 
@@ -27,8 +31,11 @@ function next(state){
         var middleCol = column;
 
         var safeIncrement = function(array, row, column){
-          var rowInside = ;
-          var colInside = ;
+          var rowInside = row >= 0 && row < rowsColumns;
+          var colInside = column >= 0 && column < rowsColumns;
+          if(rowInside && colInside){
+            array[row][column]++;
+          }
         };
 
         // safeIncrement(neighbors, row, column);
@@ -51,4 +58,6 @@ function next(state){
       }
     }
   }
+
+  return neighbors;
 }
