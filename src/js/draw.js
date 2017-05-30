@@ -16,7 +16,7 @@ function draw(state, ctx){
 
       switch(state[row][column]){
         case 1:
-          ctx.fillStyle = '#eaeaea';
+          ctx.fillStyle = randomColor();
           ctx.fillRect(x, y, boxWidth, boxWidth);
           break;
         default:
@@ -28,5 +28,12 @@ function draw(state, ctx){
 }
 
 function randomColor(){
-  
+  var r = randomInt();
+  var g = randomInt();
+  var b = randomInt();
+  return "rgb(" + r + ", " + g + ", " + b + ")";
+}
+
+function randomInt(){
+  return Math.ceil(Math.random() * (255 + 1)) - 1;
 }
