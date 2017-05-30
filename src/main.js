@@ -14,10 +14,11 @@ for(var row = 0; row < rowsColumns; row++){
     state[row].push(0);
   }
 }
-state[0][0] = 1;
+// state[0][0] = 1;
 state[0][1] = 1;
-state[1][1] = 1;
 state[0][2] = 1;
+state[1][0] = 1;
+state[1][1] = 1;
 state[rowsColumns - 1][rowsColumns - 1] = 1;
 
 draw.draw(state, ctx);
@@ -25,4 +26,4 @@ draw.draw(state, ctx);
 setInterval(function(){
   state = logic.next(state);
   draw.draw(state, ctx);
-}, 500);
+}, 100);

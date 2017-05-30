@@ -26,3 +26,7 @@ function draw(state, ctx){
   }
 
 }
+
+function randomColor(){
+  
+}
