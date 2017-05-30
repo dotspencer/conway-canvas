@@ -14,7 +14,7 @@ for(var row = 0; row < rowsColumns; row++){
   }
 }
 state[0][0] = 1;
-state[1][0] = 1;
+state[1][1] = 1;
 state[rowsColumns - 1][rowsColumns - 1] = 1;
 
 draw.draw(state, ctx);
