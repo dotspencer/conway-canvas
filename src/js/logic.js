@@ -9,12 +9,15 @@ function next(state){
 
   for(var row = 0; row < rowsColumns; row++){
     for(var column = 0; column < rowsColumns; column++){
-      switch(neighbors[row][column]){
-        case 2:
-          nextState[row][column] = 1;
-          break;
-        default:
-          nextState[row][column] = 0;
+      var numNeighbors = neighbors[row][column];
+      if(numNeighbors < 2){
+        nextState[row][column] = 0
+      }
+      if(numNeighbors == 3){
+        nextState[row][column] = 1;
+      }
+      if(numNeighbors > 3){
+        nextState[row][column] = 0;
       }
     }
   }

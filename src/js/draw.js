@@ -16,7 +16,7 @@ function draw(state, ctx){
 
       switch(state[row][column]){
         case 1:
-          ctx.fillStyle = randomColor();
+          ctx.fillStyle = '#333';
           ctx.fillRect(x, y, boxWidth, boxWidth);
           break;
         default:
